@@ -1,12 +1,15 @@
-type AddTicketProps = {
+
+type Props = {
     addTicket:()=> void
 }
 
-const Button = ({ addTicket }: AddTicketProps) => {
+const Button = ({ addTicket }:Props) => {
+   
     return (
         <>
             <button
-                onClick={addTicket}
+                onClick={() => addTicket()}
+                
                 className="mb-8 px-3 py-2 bg-gray-500 text-slate-100 text-xs rounded-md"
             >
                 Добавить задачу

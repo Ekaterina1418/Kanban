@@ -1,5 +1,3 @@
-import { useState } from "react";
-import TicketStatus from "./TicketStatus";
 import { useDrag } from "react-dnd";
 
 type TicketProps = {
@@ -8,7 +6,6 @@ type TicketProps = {
   children: React.ReactNode;
 }
 function KanbanTicket(props:TicketProps) {
-  const [status, setStatus] = useState(['Высокая','Средняя','Низкая'])
   const [{ isDrag }, dragRef] = useDrag({
     type: "ticket",
     item: props,
@@ -18,9 +15,11 @@ function KanbanTicket(props:TicketProps) {
   });
 
 
+
+  
   return (
   <>
-    {!isDrag && (
+    {!isDrag &&  (
     <section className="flex flex-col p-4 bg-white rounded-md" ref={dragRef}>
           <h2 className="text-gray-900 text-sm font-bold mb-1">{props.title}</h2>
           <p className="text-gray-500 text-xs mb-4">{props.description}</p>
