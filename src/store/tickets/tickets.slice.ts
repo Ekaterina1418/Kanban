@@ -54,6 +54,10 @@ const ticketsSlice = createSlice({
                     i.items.push(actions.payload)
                 }
            })
+        },
+        addColumn: (state, action) => {
+            state.tickets.push(action.payload)
+            
         }
     }
 });

@@ -23,6 +23,10 @@ const CreateTicket = () => {
         };
 
         dispatch(addTicket(ticket)); 
+        setTitle('')
+        setDate('')
+        setDesc('')
+        setUrgency('')
 
     };
 
